@@ -17,16 +17,14 @@
       "title": "Bunga Mawar Pink",
       "src": "https://www.oasisfloral.co.uk/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/6/0/60-00347_1.jpg",
       "content": "Bunga mawar merah muda atau biasa kita sebut dengan warna pink melambangkan cinta yang manis, kebahagiaan, dan keromantisan dengan penuh kelembutan. Mawar merah muda ini terbagi menjadi dua yaitu bunga mawar dark pink dan light pink. Mawar dark pink memiliki arti rasa syukur yang mendalam dan terima kasih.",
-      "category_id": 1,
-      
+      "category_id": 1
     },
     {
       "id": 2,
       "title": "Bunga Mawar Kuning",
       "src": "https://bungaku.co.id/wp-content/uploads/2018/08/Tanaman-Mawar-Kuning-Yellow-Rose-520x574.jpg",
       "content": "Bunga Mawar kuning merupakan ekspresi kegembiraan. Mawar kuning cerah membangkitkan perasaan sukacita, kehangatan dan persahabatan. Mawar kuning adalah simbol persahabatan dan kepedulian. Mawar kuning juga diberikan kepada sahabat-sahabat yang telah sukses melakukan sesuatu.",
-      "category_id": 2,
-      
+      "category_id": 2
     },
     {
       "id": 3,
@@ -38,30 +36,6 @@
     },
     {
       "id": 4,
-<<<<<<< HEAD
-      "title": "Pisang",
-      "src": "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
-      "content": "Bunga matahari adalah tanaman serabut",
-      "category_id": 2
-    },
-    {
-      "title": "Kumis Kucing",
-      "content": "Kumis kucing merupakan tanaman herbal",
-      "category_id": "8",
-      "id": 5
-    },
-    {
-      "title": "Lidah Buaya",
-      "content": "Lidah Buaya merupakan tanaman ...",
-      "category_id": "8",
-      "id": 6
-    },
-    {
-      "title": "Jahe",
-      "content": "jahe merupakan tanaman herbal",
-      "category_id": "8",
-      "id": 7
-=======
       "title": "Bunga Mawar Orange",
       "src": "https://media.wanita22.com/wp-content/uploads/2018/10/31040514/10-Bunga-Mawar-Orange-Cantik-untuk-Alternatif-Hadiah-dan-Dekorasi.jpg",
       "content": "Warna oranye pada dasarnya paduan dari warna merah dan kuning yang memiliki arti antusiasme. Bunga mawar oranye adalah simbol dari semangatnya seseorang, kehangatan cinta seseorang dan yang menerimanya.",
@@ -115,7 +89,6 @@
       "content": "Kalau bunga yang satu ini mungkin sering dijumpai tapi tidak pernah benar-benar tahu nama dari bunga ini.Bunga gerbera merupakan bunga potong yang paling sering diperdagangkan bersama dengan bunga mawar, anyelir, seruni, dan juga tulip. ",
       "category_id": 10,
       "flex": 6
->>>>>>> 83fb3d017f73eb46f62d040e6b5e583d4be18068
     }
   ],
   "category": [
@@ -165,6 +138,10 @@
     {
       "title": "Bunga Lili",
       "id": 12
+    },
+    {
+      "title": "Bunga Mawar Hitam",
+      "id": 13
     }
   ],
   "comments": [
