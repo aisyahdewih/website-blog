@@ -15,21 +15,66 @@
     {
       "id": 1,
       "title": "Bunga Matahari",
+      "src": "https://cdn.vuetifyjs.com/images/cards/house.jpg",
       "content": "Bunga matahari adalah tanaman serabut",
-      "category_id": 1
+      "category_id": 1,
+      "flex": 6
     },
     {
       "id": 2,
+      "src": "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
       "title": "Pisang",
+      "content": "Bunga matahari adalah tanaman serabut",
+      "category_id": 2,
+      "flex": 6
+    },
+    {
+      "id": 3,
+      "title": "Pisang",
+      "src": "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+      "content": "Bunga matahari adalah tanaman serabut",
+      "category_id": 2
+    },
+    {
+      "id": 4,
+      "title": "Pisang",
+      "src": "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
       "content": "Bunga matahari adalah tanaman serabut",
       "category_id": 2
     }
   ],
   "category": [
-    { "id": 1, "title": "Bunga" },
+    {
+      "id": 1,
+      "title": "Bunga"
+    },
     {
       "id": 2,
       "title": "Buah"
+    },
+    {
+      "id": 3,
+      "title": "Bibit"
+    },
+    {
+      "id": 4,
+      "title": "Pohon"
+    },
+    {
+      "id": 5,
+      "title": "Benih"
+    },
+    {
+      "id": 6,
+      "title": "Tanaman"
+    },
+    {
+      "title": "Akar",
+      "id": 7
+    },
+    {
+      "title": "Herbal",
+      "id": 8
     }
   ],
   "comments": [

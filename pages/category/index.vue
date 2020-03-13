@@ -1,21 +1,29 @@
 <template>
-  <v-data-table :headers="headers" :items="items" sort-by="title" class="elevation-1">
+  <v-data-table
+    :headers="headers"
+    :items="items"
+    sort-by="id"
+    class="elevation-1"
+    @refresh-dong="fetchData"
+  >
     <template v-slot:top>
       <v-toolbar flat color="black">
-        <v-toolbar-title>CATEGORY</v-toolbar-title>
+        <v-toolbar-title>Category</v-toolbar-title>
         <v-divider class="mx-4" inset vertical></v-divider>
         <v-spacer></v-spacer>
-        <v-btn>Add Category</v-btn>
+        <v-btn to="/category/create">
+          <v-icon small class="mr-2">mdi-add</v-icon>Add
+        </v-btn>
       </v-toolbar>
     </template>
-
+    <template v-slot:item.actions="{ item }">
+      <v-icon small class="mr-2" @click="editItem(item)">mdi-pencil</v-icon>
+      <v-icon small @click="hapus(item)">mdi-delete</v-icon>
+    </template>
     <template v-slot:no-data>
       <v-btn color="primary" @click="fetchData">Reset</v-btn>
     </template>
   </v-data-table>
-</template>
-
-
 </template>
 
 <script>
@@ -31,7 +39,8 @@ export default {
           sortable: false,
           value: 'id'
         },
-        { text: 'TITLE', value: 'title' }
+        { text: 'TITLE', value: 'title' },
+        { text: 'Actions', value: 'actions', sortable: false }
       ],
       items: [],
       editedIndex: -1,
@@ -46,11 +55,7 @@ export default {
   mounted() {
     this.fetchData()
   },
-  computed: {
-    // formTitle() {
-    //   return this.editedIndex === -1 ? 'New Category' : 'Edit Category'
-    // }
-  },
+  computed: {},
   methods: {
     async fetchData() {
       const res = await this.$axios.get(`http://localhost:3000/category`)
@@ -61,6 +66,18 @@ export default {
     dialog(val) {
       val || this.close()
     }
+  },
+  hapus() {
+    const setuju = confirm('are u sure?')
+    if (!setuju) {
+      return
+    }
+
+    this.$axios
+      .delete('http://localhost:3001/category/' + this.id)
+      .then((_) => {
+        this.$router.push('/category')
+      })
   }
 }
 </script>
