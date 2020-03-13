@@ -50,8 +50,8 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Posting',
-          to: '/posting'
+          title: 'Inspire',
+          to: '/inspire'
         },
         {
           icon: 'mdi-chart-bubble',
