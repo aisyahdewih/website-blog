@@ -45,7 +45,14 @@ export default {
         {
           icon: 'mdi-chart-bubble',
           title: 'Post',
-          to: '/post'
+          to: '/post',
+          item:[
+           {
+              icon: 'mdi-chart-bubble',
+              title: 'Add Post',
+              to: '/post/create',
+           }
+          ]
         },
         {
           icon: 'mdi-chart-bubble',

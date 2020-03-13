@@ -18,7 +18,7 @@
       "src": "https://cdn.vuetifyjs.com/images/cards/house.jpg",
       "content": "Bunga matahari adalah tanaman serabut",
       "category_id": 1,
-      "flex": 6
+      
     },
     {
       "id": 2,
@@ -26,7 +26,7 @@
       "title": "Pisang",
       "content": "Bunga matahari adalah tanaman serabut",
       "category_id": 2,
-      "flex": 6
+      
     },
     {
       "id": 3,
@@ -41,6 +41,24 @@
       "src": "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
       "content": "Bunga matahari adalah tanaman serabut",
       "category_id": 2
+    },
+    {
+      "title": "Kumis Kucing",
+      "content": "Kumis kucing merupakan tanaman herbal",
+      "category_id": "8",
+      "id": 5
+    },
+    {
+      "title": "Lidah Buaya",
+      "content": "Lidah Buaya merupakan tanaman ...",
+      "category_id": "8",
+      "id": 6
+    },
+    {
+      "title": "Jahe",
+      "content": "jahe merupakan tanaman herbal",
+      "category_id": "8",
+      "id": 7
     }
   ],
   "category": [
