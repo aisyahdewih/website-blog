@@ -1,0 +1,47 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "aisyah",
+      "password": "12345"
+    },
+    {
+      "id": 2,
+      "username": "ida",
+      "password": "12345"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Bunga Matahari",
+      "content": "Bunga matahari adalah tanaman serabut",
+      "category_id": 1
+    },
+    {
+      "id": 2,
+      "title": "Pisang",
+      "content": "Bunga matahari adalah tanaman serabut",
+      "category_id": 2
+    }
+  ],
+  "category": [
+    { "id": 1, "title": "Bunga" },
+    {
+      "id": 2,
+      "title": "Buah"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "content": "Good",
+      "post_id": 1
+    },
+    {
+      "id": 2,
+      "content": "Nice......",
+      "post_id": 2
+    }
+  ]
+}
