@@ -97,43 +97,35 @@
   "category": [
     {
       "id": 1,
-      "title": "Bunga Mawar Pink"
+      "title": "Bunga"
     },
     {
       "id": 2,
-      "title": "Bunga Mawar Kuning"
+      "title": "Buah"
     },
     {
       "id": 3,
-      "title": "Bunga Mawar Merah"
+      "title": "Bibit"
     },
     {
       "id": 4,
-      "title": "Bunga Mawar Orange"
+      "title": "Pohon"
     },
     {
       "id": 5,
-      "title": "Bunga Mawar Peach"
+      "title": "Benih"
     },
     {
       "id": 6,
-      "title": "Bunga Mawar Ungu"
+      "title": "Tanaman"
     },
     {
-      "title": "Bunga Tulip",
+      "title": "Akar",
       "id": 7
     },
     {
-      "title": "Bunga Peony",
+      "title": "Herbal",
       "id": 8
-    },
-    {
-      "title": "Bunga Krisan",
-      "id": 9
-    },
-    {
-      "title": "Bunga Gerbera",
-      "id": 10
     }
   ],
   "comments": [

@@ -78,17 +78,17 @@
     },
     {
       "id": 9,
-      "title": "Bunga Krisan",
-      "src": "https://uprint.id/blog/wp-content/uploads/2018/09/bunga-11.jpg",
-      "content": "Bunga seruni atau yang mungkin lebih akrab di telinga sebagai bunga krisan memiliki arti yang berbeda-beda satu sama lain, tergantung dari warnanya. Biasanya yang paling sering ditemui adalah bunga seruni kuning dan putih.",
+      "title": "Bunga Mawar Kuning",
+      "src": "https://bungaku.co.id/wp-content/uploads/2018/08/Tanaman-Mawar-Kuning-Yellow-Rose-520x574.jpg",
+      "content": "Bunga Mawar kuning merupakan ekspresi kegembiraan. Mawar kuning cerah membangkitkan perasaan sukacita, kehangatan dan persahabatan. Mawar kuning adalah simbol persahabatan dan kepedulian. Mawar kuning juga diberikan kepada sahabat-sahabat yang telah sukses melakukan sesuatu.",
       "category_id": 9,
       "flex": 6
     },
     {
       "id": 10,
-      "title": "Bunga Gerbera",
-      "src": "https://uprint.id/blog/wp-content/uploads/2018/09/bunga-12.jpg",
-      "content": "Kalau bunga yang satu ini mungkin sering dijumpai tapi tidak pernah benar-benar tahu nama dari bunga ini.Bunga gerbera merupakan bunga potong yang paling sering diperdagangkan bersama dengan bunga mawar, anyelir, seruni, dan juga tulip. ",
+      "title": "Bunga Mawar Kuning",
+      "src": "https://bungaku.co.id/wp-content/uploads/2018/08/Tanaman-Mawar-Kuning-Yellow-Rose-520x574.jpg",
+      "content": "Bunga Mawar kuning merupakan ekspresi kegembiraan. Mawar kuning cerah membangkitkan perasaan sukacita, kehangatan dan persahabatan. Mawar kuning adalah simbol persahabatan dan kepedulian. Mawar kuning juga diberikan kepada sahabat-sahabat yang telah sukses melakukan sesuatu.",
       "category_id": 10,
       "flex": 6
     }
@@ -97,43 +97,35 @@
   "category": [
     {
       "id": 1,
-      "title": "Bunga Mawar Pink"
+      "title": "Bunga"
     },
     {
       "id": 2,
-      "title": "Bunga Mawar Kuning"
+      "title": "Buah"
     },
     {
       "id": 3,
-      "title": "Bunga Mawar Merah"
+      "title": "Bibit"
     },
     {
       "id": 4,
-      "title": "Bunga Mawar Orange"
+      "title": "Pohon"
     },
     {
       "id": 5,
-      "title": "Bunga Mawar Peach"
+      "title": "Benih"
     },
     {
       "id": 6,
-      "title": "Bunga Mawar Ungu"
+      "title": "Tanaman"
     },
     {
-      "title": "Bunga Tulip",
+      "title": "Akar",
       "id": 7
     },
     {
-      "title": "Bunga Peony",
+      "title": "Herbal",
       "id": 8
-    },
-    {
-      "title": "Bunga Krisan",
-      "id": 9
-    },
-    {
-      "title": "Bunga Gerbera",
-      "id": 10
     }
   ],
   "comments": [
