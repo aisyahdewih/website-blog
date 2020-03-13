@@ -45,14 +45,7 @@ export default {
         {
           icon: 'mdi-folder-multiple-image',
           title: 'Post',
-          to: '/post',
-          item:[
-           {
-              icon: 'mdi-chart-bubble',
-              title: 'Add Post',
-              to: '/post/create',
-           }
-          ]
+          to: '/post'
         },
         {
           icon: 'mdi-format-list-bulleted',
