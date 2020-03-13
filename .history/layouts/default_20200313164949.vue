@@ -43,12 +43,12 @@ export default {
           to: '/'
         },
         {
-          icon: 'mdi-folder-multiple-image',
+          icon: 'mdi-chart-bubble',
           title: 'Post',
           to: '/post'
         },
         {
-          icon: 'mdi-format-list-bulleted',
+          icon: 'mdi-chart-bubble',
           title: 'Category',
           to: '/category'
         }

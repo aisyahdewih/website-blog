@@ -43,7 +43,7 @@ export default {
           to: '/'
         },
         {
-          icon: 'mdi-folder-multiple-image',
+          icon: 'mdi-chart-bubble',
           title: 'Post',
           to: '/post'
         },
