@@ -1,22 +1,21 @@
 <template>
-  <v-simple-table>
-    <template v-slot:default>
-      <thead>
-        <tr>
-          <th class="text-left">Title</th>
-          <th class="text-left">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in items" :key="item.title">
-          <td>{{ item.title }}</td>
-          <td> 
-            
-          </td>
-        </tr>
-      </tbody>
+  <v-data-table :headers="headers" :items="items" sort-by="title" class="elevation-1">
+    <template v-slot:top>
+      <v-toolbar flat color="black">
+        <v-toolbar-title>CATEGORY</v-toolbar-title>
+        <v-divider class="mx-4" inset vertical></v-divider>
+        <v-spacer></v-spacer>
+        <v-btn>Add Category</v-btn>
+      </v-toolbar>
     </template>
-  </v-simple-table>
+
+    <template v-slot:no-data>
+      <v-btn color="primary" @click="fetchData">Reset</v-btn>
+    </template>
+  </v-data-table>
+</template>
+
+
 </template>
 
 <script>
@@ -24,16 +23,43 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      items: []
+      dialog: false,
+      headers: [
+        {
+          text: 'ID',
+          align: 'start',
+          sortable: false,
+          value: 'id'
+        },
+        { text: 'TITLE', value: 'title' }
+      ],
+      items: [],
+      editedIndex: -1,
+      editedItem: {
+        title: ''
+      },
+      defaultItem: {
+        title: ''
+      }
     }
   },
   mounted() {
     this.fetchData()
   },
+  computed: {
+    // formTitle() {
+    //   return this.editedIndex === -1 ? 'New Category' : 'Edit Category'
+    // }
+  },
   methods: {
     async fetchData() {
-      const res = await this.$axios.get(`http://localhost:3000/category`);
+      const res = await this.$axios.get(`http://localhost:3000/category`)
       this.items = res.data
+    }
+  },
+  watch: {
+    dialog(val) {
+      val || this.close()
     }
   }
 }
