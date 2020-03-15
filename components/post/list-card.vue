@@ -1,20 +1,13 @@
 <template>
-  <v-card class="mx-auto" max-width="344">
-    <v-img
-      :src="item.src"
-      class="white--text align-end"
-      gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-      height="200px"
-    ></v-img>
-
+  <v-container>
     <v-card-title>{{title}}</v-card-title>
 
     <v-card-subtitle>{{content}}</v-card-subtitle>
 
     <v-card-actions>
-      <v-btn :to="'/post/' + id + '/edit'">EDIT</v-btn>
-      <v-btn color="purple" text>DELETE</v-btn>
-
+      <v-btn text>View</v-btn>
+      <v-btn text>Edit</v-btn>
+      <v-btn color="purple" text>Delete</v-btn>
       <v-spacer></v-spacer>
 
       <v-btn icon @click="show = !show">
@@ -26,13 +19,25 @@
       <div v-show="show">
         <v-divider></v-divider>
 
-        <v-card-text>{{ content }}</v-card-text>
+        <v-card-text>{{content}}</v-card-text>
       </div>
     </v-expand-transition>
-  </v-card>
+  </v-container>
 </template>
 <script>
 export default {
-  props: ['title', 'content']
+  props: ['id', 'title', 'content', 'src', 'category_id'],
+  methods: {
+    hapus() {
+      const setuju = confirm('anda yakin?')
+      if (!setuju) {
+        return
+      }
+
+      this.$axios.delete('http://localhost:3000/posts/' + this.id).then((_) => {
+        this.$emit('refresh-dong')
+      })
+    }
+  }
 }
 </script>

@@ -1,6 +1,13 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed app>
+  <v-app light>
+    <v-navigation-drawer
+      color="teal lighten-1"
+      v-model="drawer"
+      :mini-variant="miniVariant"
+      :clipped="clipped"
+      fixed
+      app
+    >
       <v-list>
         <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
           <v-list-item-action>
@@ -45,14 +52,7 @@ export default {
         {
           icon: 'mdi-folder-multiple-image',
           title: 'Post',
-          to: '/post',
-          item:[
-           {
-              icon: 'mdi-chart-bubble',
-              title: 'Add Post',
-              to: '/post/create',
-           }
-          ]
+          to: '/post'
         },
         {
           icon: 'mdi-format-list-bulleted',

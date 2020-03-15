@@ -14,7 +14,7 @@
   "posts": [
     {
       "id": 1,
-      "title": "Bunga Mawar Pink",
+      "title": "Bunga Mawar Muda di Indonesia",
       "src": "https://www.oasisfloral.co.uk/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/6/0/60-00347_1.jpg",
       "content": "Bunga mawar merah muda atau biasa kita sebut dengan warna pink melambangkan cinta yang manis, kebahagiaan, dan keromantisan dengan penuh kelembutan. Mawar merah muda ini terbagi menjadi dua yaitu bunga mawar dark pink dan light pink. Mawar dark pink memiliki arti rasa syukur yang mendalam dan terima kasih.",
       "category_id": 1
@@ -90,6 +90,7 @@
       "category_id": 10,
       "flex": 6
     }
+   
   ],
   "category": [
     {
@@ -142,6 +143,10 @@
     {
       "title": "Bunga Mawar Hitam",
       "id": 13
+    },
+    {
+      "title": "Bunga Mawar Biru",
+      "id": 14
     }
   ],
   "comments": [

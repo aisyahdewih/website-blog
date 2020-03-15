@@ -1,8 +1,20 @@
-<template>
+ <template>
+ 
   <v-container fluid>
-    <v-btn color="purple" to="/post/create">
+    <div class="my-2">
+       <v-btn color="teal lighten-1" to="/post/create" flex="right">
       <v-icon small class="mr-2">mdi-add</v-icon>Add
-    </v-btn>
+    </v-btn> 
+     
+      <v-text-field
+        v-model="query"
+        label="Search"
+        append-icon="mdi-magnify"
+      ></v-text-field>
+       <v-btn small outlined color="primary" @click="search">Search</v-btn>
+    </div>
+   
+   
     <v-row dense>
       <v-col v-for=" item in items" :key="item.title" :cols="item.flex">
         <v-card class="mx-auto" max-width="344">
@@ -18,9 +30,13 @@
           <v-card-subtitle v-text="item.content"></v-card-subtitle>
 
           <v-card-actions>
-            <v-btn :to="'/post/' + id + '/edit'">EDIT</v-btn>
-
-            <v-btn color="purple" text>DELETE</v-btn>
+             <v-btn :to=" '/post/' + item.id + '/edit'">
+              <v-icon small class="mr-2" color="teal lighten-1">mdi-pencil</v-icon> Edit
+            </v-btn>
+           <v-btn>
+              <v-icon small @click="hapus(item.id)" color="teal lighten-1">mdi-delete</v-icon> Delete
+           </v-btn>
+            
 
             <v-spacer></v-spacer>
 
@@ -32,21 +48,28 @@
           <v-expand-transition>
             <div v-show="show">
               <v-divider></v-divider>
-
-              <v-card-text v-text="item.content"></v-card-text>
+              <v-card-text>{{item.content}}</v-card-text>
             </div>
           </v-expand-transition>
         </v-card>
       </v-col>
     </v-row>
   </v-container>
-</template>
+</template> 
+
 
 <script>
 export default {
   data() {
     return {
-      items: []
+      search: '',
+      show: false,
+      items: [],
+      id: this.$route.params.id,
+      query: '',
+       isError: false,
+      isEmpty: false,
+      isLoading: false,
     }
   },
   mounted() {
@@ -54,21 +77,21 @@ export default {
   },
   methods: {
     async search() {
-      // SEARCH API
-      this.isLoading = true
-
+       this.isLoading = true;
       try {
-        const res = await this.$axios.get(`http://localhost:3000/posts`)
-        this.items = res.data
-
+        const res = await this.$axios.get("http://localhost:3000/posts", {
+          params: {
+            q: this.query
+          }
+        });
+        this.items = res.data;
         if (this.items.length === 0) {
-          this.isEmpty = true
+          this.isEmpty = true;
         }
       } catch (err) {
-        this.isError = true
+        this.isError = true;
       }
-
-      this.isLoading = false
+      this.isLoading = false;
     },
     async refresh() {
       this.isLoading = true
@@ -85,6 +108,25 @@ export default {
       }
 
       this.isLoading = false
+    }
+  },
+  async hapus() {
+    const setuju = confirm('anda yakin?')
+    if (!setuju) {
+      return
+    }
+    const setuju2 = confirm('yakin ?')
+    if (!setuju2) {
+      return
+    }
+
+    this.$axios.delete('http://localhost:3000/posts/' + this.id).then((_) => {})
+  },
+  computed: {
+    filteredPosts: function() {
+      return this.items.filter(item => {
+        return item.title.match(this.search);
+      });
     }
   }
 }

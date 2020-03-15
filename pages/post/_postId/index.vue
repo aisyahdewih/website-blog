@@ -3,6 +3,7 @@
 <template>
   <v-row dense>
     <v-col v-for=" item in items" :key="item.title" :cols="item.flex">
+        
       <v-card class="mx-auto" max-width="344">
         <v-img
           :src="item.src"

@@ -1,10 +1,11 @@
 <template>
   <v-container>
+    <v-btn to="/post" color="teal lighten-1">Back</v-btn>
     <v-card class="mx-auto" max-width="344">
       <form>
         <h3>Edit Post</h3>
-        <v-text-field v-model="item.title"   label="Title"></v-text-field>
-        <v-text-field v-model="item.content"   label="Content"></v-text-field>
+        <v-text-field v-model="item.title" :name="title" label="Title"></v-text-field>
+        <v-text-field v-model="item.content" :name="content"  label="Content"></v-text-field>
         <v-text-field
           v-model="item.category_id"
           :name="category_id"
@@ -12,7 +13,7 @@
           label="ID Kategori"
         ></v-text-field>
         <v-spacer></v-spacer>
-        <v-btn color="success" @click.prevent="save">SEND</v-btn>
+        <v-btn color="teal lighten-1" @click.prevent="kirim">SEND</v-btn>
       </form>
     </v-card>
   </v-container>
@@ -20,31 +21,27 @@
 
 
 <script>
-// import MyNav from '~/components/my-nav'
-
 export default {
-  // components: { MyNav },
   data() {
     return {
-      item: {},
-      id: this.$route.params.id
+      item: {}
     }
   },
   mounted() {
-    this.getDetailPost()
+    this.getDetail()
   },
   methods: {
-    getDetailPost() {
+    getDetail() {
       this.$axios
-        .get('http://localhost:3000/posts/' + this.$route.params.id)
+        .get('http://localhost:3000/posts/' + this.$route.params.postId)
         .then((res) => {
-          this.item = res.data
+          this.item = res.data || {}
         })
     },
-    save() {
+    kirim() {
       this.$axios
         .patch(
-          'http://localhost:3000/posts/' + this.$route.params.id,
+          'http://localhost:3000/posts/' + this.$route.params.postId,
           this.item
         )
         .then((_) => {
@@ -56,3 +53,4 @@ export default {
 </script>
 
 <style></style>
+

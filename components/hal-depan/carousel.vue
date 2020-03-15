@@ -18,7 +18,7 @@
           align="center"
           justify="center"
         >
-          <div class="display-3">{{ slide }} Slide</div>
+          <div class="display-3">{{ slide }} </div>
         </v-row>
       </v-sheet>
     </v-carousel-item>
@@ -33,14 +33,14 @@
           'warning',
           'pink darken-2',
           'red lighten-1',
-          'deep-purple accent-4',
+         
         ],
         slides: [
-          'First',
-          'Second',
-          'Third',
-          'Fourth',
-          'Fifth',
+          'WELCOME',
+          'TO',
+          'WEBSITE',
+          'FLORA',
+          
         ],
       }
     },
