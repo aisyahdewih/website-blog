@@ -4,6 +4,8 @@
     :items="items"
     :search="search"
     sort-by="id"
+    sort-field="field"
+    sort-desc="true"
     class="elevation-1"
     @refresh-dong="fetchData"
   >

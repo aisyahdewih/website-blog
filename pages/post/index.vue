@@ -1,51 +1,44 @@
  <template>
- 
   <v-container fluid>
     <v-row no-gutters>
       <v-col>
-        <div
-          class="pa-2"
-          outlined
-          tile
-        >
-        <v-btn color="teal lighten-1" to="/post/create" flex="right">
-          <v-icon small class="mr-2">mdi-add</v-icon>Add
-        </v-btn> 
+        <div class="pa-2" outlined tile>
+          <v-btn color="teal lighten-1" to="/post/create" flex="right">
+            <v-icon small class="mr-2">mdi-add</v-icon>Add
+          </v-btn>
         </div>
       </v-col>
       <v-col md="auto">
-        <div
-          class="pa-2"
-          outlined
-          tile
-        >
-        <v-text-field
-           v-model="query"
-          label="Search"
-          append-icon="mdi-magnify"
-        ></v-text-field>
-         <v-btn small outlined color="primary" @click="search">Search</v-btn>
+        <div class="pa-2" outlined tile>
+          <v-text-field v-model="query" label="Search" append-icon="mdi-magnify"></v-text-field>
+          <v-btn small outlined color="primary" @click="search">Search</v-btn>
         </div>
       </v-col>
-    </v-row>   
-    <v-container>
-    <v-row dense>
-      <v-col v-for=" item in items" :key="item.title" :cols="item.flex">
-        <v-card class="mx-auto" max-width="344">
-          
-          <ListCard
-          :id="item.id"
-          :key="String(item.title)"
-          :title="item.title"
-          :content="item.content"
-          :src="item.src"
-          :cols="item.flex"
-          @refresh-ya="refresh"
-        ></ListCard>
-        </v-card>
-      </v-col>
     </v-row>
-  </v-container>
+    <v-container>
+      <v-row dense>
+        <v-col
+          v-for=" item in items"
+          :key="item.title"
+          :cols="item.flex"
+          v-bind:pagination.sync="pagination"
+          hide-actions
+          class="elevation-1"
+        >
+          <v-card class="mx-auto" max-width="344">
+            <ListCard
+              :id="item.id"
+              :key="String(item.title)"
+              :title="item.title"
+              :content="item.content"
+              :src="item.src"
+              :cols="item.flex"
+              @refresh-ya="refresh"
+            ></ListCard>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-container>
 </template> 
 
@@ -56,14 +49,13 @@ export default {
   components: {ListCard},
   data() {
     return {
-      
-     
       items: [],
       id: this.$route.params.id,
       query: '',
        isError: false,
       isEmpty: false,
       isLoading: false,
+      pagination : {'sortBy': 'id', 'descending': true, 'rowsPerPage': -1}
     }
   },
   mounted() {
