@@ -1,20 +1,33 @@
  <template>
  
   <v-container fluid>
-    <div class="my-2">
-       <v-btn color="teal lighten-1" to="/post/create" flex="right">
-      <v-icon small class="mr-2">mdi-add</v-icon>Add
-    </v-btn> 
-     
-      <v-text-field
-        v-model="query"
-        label="Search"
-        append-icon="mdi-magnify"
-      ></v-text-field>
-       <v-btn small outlined color="primary" @click="search">Search</v-btn>
-    </div>
-   
-   
+    <v-row no-gutters>
+      <v-col>
+        <div
+          class="pa-2"
+          outlined
+          tile
+        >
+        <v-btn color="teal lighten-1" to="/post/create" flex="right">
+          <v-icon small class="mr-2">mdi-add</v-icon>Add
+        </v-btn> 
+        </div>
+      </v-col>
+      <v-col md="auto">
+        <div
+          class="pa-2"
+          outlined
+          tile
+        >
+        <v-text-field
+           v-model="query"
+          label="Search"
+          append-icon="mdi-magnify"
+        ></v-text-field>
+         <v-btn small outlined color="primary" @click="search">Search</v-btn>
+        </div>
+      </v-col>
+    </v-row>   
     <v-row dense>
       <v-col v-for=" item in items" :key="item.title" :cols="item.flex">
         <v-card class="mx-auto" max-width="344">
@@ -62,7 +75,7 @@
 export default {
   data() {
     return {
-      search: '',
+      
       show: false,
       items: [],
       id: this.$route.params.id,
