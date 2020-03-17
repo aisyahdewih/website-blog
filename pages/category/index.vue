@@ -19,7 +19,7 @@
           hide-details
         ></v-text-field>
         <v-spacer></v-spacer>
-         <v-btn to="/category/create" color="teal lighten-3">
+        <v-btn to="/category/create" color="teal lighten-3">
           <v-icon small class="mr-2">mdi-add</v-icon>Add
         </v-btn>
       </v-toolbar>
@@ -44,8 +44,8 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      id : this.$route.params.catId,
-      search:'',
+      id: this.$route.params.catId,
+      search: '',
       dialog: false,
       headers: [
         {
@@ -73,16 +73,14 @@ export default {
       const res = await this.$axios.get(`http://localhost:3000/category`)
       this.items = res.data
     },
-    hapus({ params }) {
+    hapus(id) {
       const setuju = confirm('are u sure?')
       if (!setuju) {
         return
       }
-      this.$axios
-        .delete('http://localhost:3000/category/' + this.id)
-        .then((_) => {
-          this.fetchData()
-        })
+      this.$axios.delete('http://localhost:3000/category/' + id).then((_) => {
+        this.fetchData()
+      })
     }
   },
   watch: {
