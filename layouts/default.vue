@@ -17,7 +17,7 @@
           exact
         >
           <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon color="red lighten-2">{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title v-text="item.title" />
@@ -26,11 +26,8 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar color="red lighten-4" :clipped-left="clipped" fixed app>
-      <v-app-bar-nav-icon
-        color="pink"
-        @click.stop="drawer = !drawer"
-      />
-      <v-toolbar-title  v-text="title" />
+      <v-app-bar-nav-icon color="pink" @click.stop="drawer = !drawer" />
+      <v-toolbar-title v-text="title" />
       <v-spacer />
     </v-app-bar>
     <v-content>
@@ -40,7 +37,9 @@
     </v-content>
 
     <v-footer :fixed="fixed" app>
-      <span align="center--text" justify="center--text" >&copy; {{ new Date().getFullYear() }}</span>
+      <span align="center--text" justify="center--text"
+        >&copy; {{ new Date().getFullYear() }}</span
+      >
     </v-footer>
   </v-app>
 </template>

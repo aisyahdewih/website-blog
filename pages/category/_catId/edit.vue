@@ -1,13 +1,13 @@
 <template>
   <v-container>
-    <v-btn to="/category" color="teal lighten-1">Back</v-btn>
+    <v-btn to="/category" color="red lighten-3">Back</v-btn>
 
     <v-card class="mx-auto" max-width="344">
       <v-card-title>EDIT CATEGORY</v-card-title>
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field v-model="item.title" :name="title" :type="text" label="Category" required></v-text-field>
         <v-spacer></v-spacer>
-        <v-btn color="teal lighten-1" @click.prevent="kirim">SEND</v-btn>
+        <v-btn color="red lighten-3" @click.prevent="kirim">SEND</v-btn>
       </v-form>
     </v-card>
   </v-container>
