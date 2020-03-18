@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <div>
     <v-img
       :src="src"
       class="white--text align-end"
@@ -31,7 +31,7 @@
         <v-card-text>{{content}}</v-card-text>
       </div>
     </v-expand-transition>
-  </v-container>
+  </div>
 </template>
 <script>
 export default {

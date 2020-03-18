@@ -1,4 +1,4 @@
- <template>
+<template>
   <v-container fluid>
     <v-row no-gutters>
       <v-col>
@@ -8,9 +8,29 @@
           </v-btn>
         </div>
       </v-col>
+      <v-col class="d-flex" cols="12" sm="3">
+        <div class="pa-2" outlined tile>
+          <v-select
+            v-bind:items="categories"
+            label="Category"
+            v-model="categoryFilter"
+            item-text="title"
+            item-value="id"
+            solo
+          >
+            <option v-for="category in categories" :value="category.id">
+              {{category.title}
+            </option>
+          </v-select> 
+        </div>
+      </v-col>
       <v-col md="auto">
         <div class="pa-2" outlined tile>
-          <v-text-field v-model="query" label="Search" append-icon="mdi-magnify"></v-text-field>
+          <v-text-field
+            v-model="query"
+            label="Search"
+            append-icon="mdi-magnify"
+          ></v-text-field>
           <v-btn small outlined color="primary" @click="search">Search</v-btn>
         </div>
       </v-col>
@@ -18,7 +38,7 @@
     <v-container>
       <v-row dense>
         <v-col
-          v-for=" item in items"
+          v-for="item in items"
           :key="item.title"
           :cols="item.flex"
           v-bind:pagination.sync="pagination"
@@ -40,44 +60,52 @@
       </v-row>
     </v-container>
   </v-container>
-</template> 
-
+</template>
 
 <script>
 import ListCard from '~/components/post/list-card'
+import Multiselect from 'vue-multiselect'
+
 export default {
-  components: {ListCard},
+  components: { ListCard ,  Multiselect },
   data() {
     return {
       items: [],
       id: this.$route.params.id,
       query: '',
-       isError: false,
+      isError: false,
       isEmpty: false,
       isLoading: false,
-      pagination : {'sortBy': 'id', 'descending': true, 'rowsPerPage': -1}
+      pagination: { sortBy: 'id', descending: true, rowsPerPage: -1 },
+      categories: [],
+      categoryFilter: ''
     }
   },
   mounted() {
     this.refresh()
+    this.getCategory()
   },
   methods: {
     async search() {
-       this.isLoading = true;
+      this.isLoading = true
       try {
-        const res = await this.$axios.get("http://localhost:3000/posts", {
+        const res = await this.$axios.get('http://localhost:3000/posts', {
           params: {
             q: this.query
           }
-        });
-        this.items = res.data;
+        })
+        this.items = res.data
         if (this.items.length === 0) {
-          this.isEmpty = true;
+          this.isEmpty = true
         }
       } catch (err) {
-        this.isError = true;
+        this.isError = true
       }
-      this.isLoading = false;
+      this.isLoading = false
+    },
+    async getCategory() {
+      const res = await this.$axios.get('http://localhost:3000/category')
+      this.categories = res.data
     },
     async refresh() {
       this.isLoading = true
@@ -110,10 +138,31 @@ export default {
   },
   computed: {
     filteredPosts: function() {
-      return this.items.filter(item => {
-        return item.title.match(this.search);
-      });
+      var vm = this
+      var categories = vm.categoryFilter
+    
+        return vm.items.filter(function(item){
+          return item.category_id
+        })
+      }
+     
     }
-  }
 }
+
 </script>
+<style >
+.filter {
+	font-family:arial;
+	padding: 6px 6px;
+	cursor:pointer;
+	border-radius: 6px;
+	transition: all 0.35s;
+}
+.filter.active {
+	box-shadow:0px 1px 3px 0px #00000026;
+}
+
+.filter:hover {
+	background:lightgray;
+} 
+</style>
