@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-btn to="/post" color="teal lighten-1">Back</v-btn>
+    <v-btn to="/post" color="red lighten-3">Back</v-btn>
     <v-card class="mx-auto" max-width="344">
       <form>
         <h3>Edit Post</h3>
@@ -13,7 +13,7 @@
           label="ID Kategori"
         ></v-text-field>
         <v-spacer></v-spacer>
-        <v-btn color="teal lighten-1" @click.prevent="kirim">SEND</v-btn>
+        <v-btn color="red lighten-3" @click.prevent="kirim">SEND</v-btn>
       </form>
     </v-card>
   </v-container>

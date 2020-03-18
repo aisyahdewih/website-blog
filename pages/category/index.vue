@@ -10,7 +10,7 @@
     @refresh-dong="fetchData"
   >
     <template v-slot:top>
-      <v-toolbar flat color="teal lighten-1">
+      <v-toolbar flat color="red lighten-4">
         <v-toolbar-title>Category</v-toolbar-title>
         <v-divider class="mx-4" inset vertical></v-divider>
         <v-text-field
@@ -21,19 +21,19 @@
           hide-details
         ></v-text-field>
         <v-spacer></v-spacer>
-        <v-btn to="/category/create" color="teal lighten-3">
+        <v-btn to="/category/create"   color="red lighten-3">
           <v-icon small class="mr-2">mdi-add</v-icon>Add
         </v-btn>
       </v-toolbar>
     </template>
     <template v-slot:item.actions="{ item }">
       <nuxt-link :to="'/category/' + item.id">
-        <v-icon small class="mr-2" color="teal lighten-3">mdi-eye</v-icon>
+        <v-icon small class="mr-2" color="pink">mdi-eye</v-icon>
       </nuxt-link>
       <nuxt-link :to=" '/category/' + item.id + '/edit'">
-        <v-icon small class="mr-2" color="teal lighten-3">mdi-pencil</v-icon>
+        <v-icon small class="mr-2" color="pink">mdi-pencil</v-icon>
       </nuxt-link>
-      <v-icon small @click="hapus(item.id)" color="teal lighten-3">mdi-delete</v-icon>
+      <v-icon small @click="hapus(item.id)" color="pink">mdi-delete</v-icon>
     </template>
     <template v-slot:no-data>
       <v-btn color="primary" @click="fetchData">Reset</v-btn>

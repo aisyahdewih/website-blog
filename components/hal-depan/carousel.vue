@@ -29,10 +29,10 @@
     data () {
       return {
         colors: [
-          'indigo',
-          'warning',
-          'pink darken-2',
-          'red lighten-1',
+          'red lighten-3',
+          'red lighten-3',
+          'red lighten-3',
+          'red lighten-3',
          
         ],
         slides: [

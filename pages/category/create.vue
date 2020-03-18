@@ -1,7 +1,7 @@
 
 <template>
 <v-container>
-    <v-btn to="/category" color="teal lighten-1">Back</v-btn>
+    <v-btn to="/category" color="red lighten-3">Back</v-btn>
     
     <v-card
         class="mx-auto"
@@ -20,7 +20,7 @@
       required
     ></v-text-field>
      <v-spacer> </v-spacer>
-      <v-btn color="teal lighten-1" @click.prevent="kirim">SEND</v-btn>
+      <v-btn color="red lighten-3" @click.prevent="kirim">SEND</v-btn>
     </v-form>
 
   </v-card>

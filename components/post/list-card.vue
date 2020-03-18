@@ -7,15 +7,16 @@
       height="200px"
     ></v-img>
     <v-card-title>{{title}}</v-card-title>
+    
 
     <v-card-subtitle>{{ content }}</v-card-subtitle>
 
     <v-card-actions>
       <v-btn :to=" '/post/' + id + '/edit'">
-        <v-icon small class="mr-2" color="teal lighten-1">mdi-pencil</v-icon>Edit
+        <v-icon small class="mr-2" color="pink">mdi-pencil</v-icon>Edit
       </v-btn>
       <v-btn @click="hapus">
-        <v-icon small  color="teal lighten-1">mdi-delete</v-icon>Delete
+        <v-icon small  color="pink">mdi-delete</v-icon>Delete
       </v-btn>
 
       <v-spacer></v-spacer>

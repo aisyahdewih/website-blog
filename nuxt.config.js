@@ -30,9 +30,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    
-  ],
+  plugins: [],
   /*
    ** Nuxt.js dev-modules
    */
@@ -66,7 +64,7 @@ export default {
       light: true,
       themes: {
         light: {
-          primary: colors.teal.darken2,
+          primary: colors.pink.darken2,
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
