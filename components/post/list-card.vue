@@ -7,7 +7,8 @@
       height="200px"
     ></v-img>
     <v-card-title>{{title}}</v-card-title>
-    
+
+    <small>{{category_id}}</small>
 
     <v-card-subtitle>{{ content }}</v-card-subtitle>
 
@@ -16,7 +17,7 @@
         <v-icon small class="mr-2" color="pink">mdi-pencil</v-icon>Edit
       </v-btn>
       <v-btn @click="hapus">
-        <v-icon small  color="pink">mdi-delete</v-icon>Delete
+        <v-icon small color="pink">mdi-delete</v-icon>Delete
       </v-btn>
 
       <v-spacer></v-spacer>

@@ -10,26 +10,20 @@
       </v-col>
       <v-col class="d-flex" cols="12" sm="3">
         <div class="pa-2" outlined tile>
-            <v-select
+          <v-select
             v-bind:items="categories"
             label="Category"
             v-model="categoryFilter"
             item-text="title"
             item-value="id"
-            
-          >
-          </v-select> 
-           <!-- {{ categoryFilter }} -->
-            <v-btn small outlined color="primary" @click="filter">Filter</v-btn>
+          ></v-select>
+         
+          <v-btn small outlined color="primary" @click="filter">Filter</v-btn>
         </div>
       </v-col>
       <v-col class="d-flex" cols="12" sm="3">
         <div class="pa-2" outlined tile>
-          <v-text-field
-            v-model="query"
-            label="Search"
-            append-icon="mdi-magnify"
-          ></v-text-field>
+          <v-text-field v-model="query" label="Search" append-icon="mdi-magnify"></v-text-field>
           <v-btn small outlined color="primary" @click="cari">Search</v-btn>
         </div>
       </v-col>
@@ -85,6 +79,11 @@ export default {
     this.refresh()
     this.getCategory()
   },
+  watch: {
+    categoryFilter() {
+      this.filter()
+    }
+  },
   methods: {
     async cari() {
       this.isLoading = true
@@ -104,21 +103,10 @@ export default {
       this.isLoading = false
     },
     async filter() {
-      this.isLoading = true
-      try {
-        const res = await this.$axios.get('http://localhost:3000/posts', {
-          params: {
-            q: this.categoryFilter 
-          }
-        })
-        this.items = res.data
-        if (this.items.length === 0) {
-          this.isEmpty = true
-        }
-      } catch (err) {
-        this.isError = true
-      }
-      this.isLoading = false
+      const res = await this.$axios.get(
+        `http://localhost:3000/posts?id=` + this.categoryFilter
+      )
+      this.items = res.data
     },
     async getCategory() {
       const res = await this.$axios.get('http://localhost:3000/category')
