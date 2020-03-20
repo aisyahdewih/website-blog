@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-row no-gutters>
       <v-col>
-        <div class="pa-2" outlined tile>
+        <div class="pa-2" >
           <v-btn color="red lighten-3" to="/post/create" flex="right">
             <v-icon small class="mr-2">mdi-add</v-icon>Add
           </v-btn>
@@ -22,7 +22,7 @@
         </div>
       </v-col>
       <v-col class="d-flex" cols="12" sm="3">
-        <div class="pa-2" outlined tile>
+        <div class="pa-2">
           <v-text-field v-model="query" label="Search" append-icon="mdi-magnify"></v-text-field>
           <v-btn small outlined color="primary" @click="cari">Search</v-btn>
         </div>
